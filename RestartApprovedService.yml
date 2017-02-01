@@ -10,10 +10,10 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ---
 - hosts: '{{ target }}'
-  gather_facts: yes
   name: Restart Approved Service On Linux
   tasks:
-  - service:
-    name: '{{ ApprovedServiceForRestart }}'
-    state: restarted
+  - name: Restart Service 
+    service: 
+      name: '{{ ApprovedServiceForRestart }}' 
+      state: restarted
  
