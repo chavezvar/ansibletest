@@ -1,0 +1,19 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Playbook Name                 : RestartApprovedService.yml
+# Description                   : Restart Approved Service On Linux
+# Input Parameters No			: ApprovedServiceForRestart
+# Dependent on                  : No Dependencies
+#
+# Modified By			Modified Date			Description
+# ----------------      --------------------	----------------
+# Horacio Chavez		2017-01-30				Creation
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+---
+- hosts: '{{ target }}'
+  gather_facts: yes
+  name: Restart Approved Service On Linux
+  tasks:
+  - service:
+    name: '{{ ApprovedServiceForRestart }}'
+    state: restarted
+ 

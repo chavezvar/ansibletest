@@ -1,0 +1,20 @@
+﻿# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Playbook Name                 : CurrentMemory.yml
+# Description                   : Get Current Memory Usage On Linux
+# Input Parameters No			: No of input parameters
+# Dependent on                  : No Dependencies
+#
+# Modified By			Modified Date			Description
+# ----------------      --------------------	----------------
+# Horacio Chavez		2017-01-30				Creation
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+---
+- hosts: '{{ target }}'
+  gather_facts: yes
+#  remote_user: centos
+#  become: yes
+#  become_method: sudo
+  name: HTTPD Status
+  tasks:
+  - name: Stablish the status of an Apache web Server in Linux 6.X
+    shell: free | grep Mem | awk '{print $3/$2 * 100.0}'
