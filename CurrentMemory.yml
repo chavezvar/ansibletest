@@ -11,10 +11,7 @@
 ---
 - hosts: '{{ target }}'
   gather_facts: yes
-#  remote_user: centos
-#  become: yes
-#  become_method: sudo
-  name: HTTPD Status
+  name: Geet current memory
   tasks:
   - name: Stablish the status of an Apache web Server in Linux 6.X
     shell: free | grep Mem | awk '{print $3/$2 * 100.0}'
