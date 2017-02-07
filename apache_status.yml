@@ -1,7 +1,5 @@
 ---
 - remote_user: ansible
-  become: yes
-  become_method: sudo
   name: HTTPD Status
   tasks:
   - name: Stablish the status of an Apache web Server in Linux 6.X
